@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Fri Nov 20 12:03:40 2020
 
@@ -14,7 +13,7 @@ garden1 = np.array([[5, 7, 8, 6, 3],
 gdx1=np.random.randint(10, size=(3,4))
 
 """
-This function finds the middle array of an array, and it calls another function to find the actual high value.
+This function finds the middle area of an array, and then calls another function to find the high value amongst the selection.
 """
 
 def function_center(gdx1):
@@ -41,8 +40,7 @@ def function_center(gdx1):
     return function_maxvalue(dumrow,dumcol,gdx1)
 
 """
-This takes an array of coordinates and find the coordinate and the value of the highest value item.
-
+This takes an array of coordinates and find the coordinate and the value of the highest value component.
 """
 
 def function_maxvalue(dumrow, dumcol, gdx1):
@@ -61,9 +59,8 @@ def function_maxvalue(dumrow, dumcol, gdx1):
 
     
 """
-This takes a coordiante and find the value and if it exists in the array.
+This takes a coordinate and finds its value, and if it is in bounds of the array.
 """
-
 
 def function_movement(rowloc, colloc, arrayx, highval):
     counter=0
@@ -78,18 +75,18 @@ def function_movement(rowloc, colloc, arrayx, highval):
 
 """
 Combine everything together.
-function_main(gdx1)
 
-array of final plot, total carrots eaten, coordinates.
+>>>function_main(gdx1)
+>>>([array of final plot], total carrots eaten, (coordinates))
 """
 
 def function_main(gdx1):
     
     currlocr=function_center(gdx1).row
     currlocc=function_center(gdx1).col
-    
     cumeat=0
     
+    #If it's 4, it means all 4 directions are blocked.
     i=0
     while i<4:
 
@@ -99,14 +96,14 @@ def function_main(gdx1):
         eastc=currlocc+1
         tplocationr=currlocr
         tplocationc=currlocc
-        
         currhighvalue=0
+        
         i=0
 
         print('\nTop Cycle: Current Row: '+str(currlocr)+' Column: '+str(currlocc)+' Location Value: '+str(gdx1[currlocr,currlocc]))
         print(gdx1)
         
-        
+        #All these depends on the other functions to get the values for this part.
         valuesx=function_movement(northr, currlocc, gdx1, currhighvalue)
         if valuesx[2]>currhighvalue:
             tplocationr=valuesx[0]
