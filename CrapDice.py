@@ -4,7 +4,7 @@ import pandas
 
 #Define dice
 dnorm=[1,2,3,4,5,6]
-dload=[2,3,4,5]
+dload=[1,2,3,4]
 
 """
 Section 1
