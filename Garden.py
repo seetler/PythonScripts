@@ -10,7 +10,7 @@ garden1 = np.array([[5, 7, 8, 6, 3],
 [4, 6, 3, 4, 9],
 [3, 1, 0, 5, 8]])
 
-gdx1=np.random.randint(10, size=(3,4))
+gdx1=np.random.randint(10, size=(7,5))
 
 """
 This function finds the middle area of an array, and then calls another function to find the high value amongst the selection.
